@@ -1,0 +1,91 @@
+{
+  "projectType": "application",
+  "root": "apps/spain",
+  "sourceRoot": "apps/spain/src",
+  "prefix": "green-tube-demo",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/spain",
+        "index": "apps/spain/src/index.html",
+        "main": "apps/spain/src/main.ts",
+        "polyfills": "apps/spain/src/polyfills.ts",
+        "tsConfig": "apps/spain/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/spain/src/favicon.ico", "apps/spain/src/assets"],
+        "styles": ["apps/spain/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/spain/src/environments/environment.ts",
+              "with": "apps/spain/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "spain:build:production"
+        },
+        "development": {
+          "browserTarget": "spain:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "spain:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/spain/src/**/*.ts",
+          "apps/spain/src/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/spain"],
+      "options": {
+        "jestConfig": "apps/spain/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

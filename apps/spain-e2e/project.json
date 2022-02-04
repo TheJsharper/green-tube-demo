@@ -1,0 +1,28 @@
+{
+  "root": "apps/spain-e2e",
+  "sourceRoot": "apps/spain-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/spain-e2e/cypress.json",
+        "devServerTarget": "spain:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "spain:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/spain-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["spain"]
+}

@@ -1,0 +1,28 @@
+{
+  "root": "apps/romania-e2e",
+  "sourceRoot": "apps/romania-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/romania-e2e/cypress.json",
+        "devServerTarget": "romania:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "romania:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/romania-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["romania"]
+}

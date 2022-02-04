@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "romania": "apps/romania",
+    "romania-e2e": "apps/romania-e2e",
+    "spain": "apps/spain",
+    "spain-e2e": "apps/spain-e2e"
+  }
+}
