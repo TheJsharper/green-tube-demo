@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/dog",
+  "sourceRoot": "libs/dog/src",
+  "prefix": "green-tube-demo",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/dog"],
+      "options": {
+        "jestConfig": "libs/dog/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/dog/src/**/*.ts", "libs/dog/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

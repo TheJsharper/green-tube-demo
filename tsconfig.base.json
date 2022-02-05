@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@green-tube-demo/cat": ["libs/cat/src/index.ts"],
+      "@green-tube-demo/dog": ["libs/dog/src/index.ts"],
+      "@green-tube-demo/share": ["libs/share/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

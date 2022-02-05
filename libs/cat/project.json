@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/cat",
+  "sourceRoot": "libs/cat/src",
+  "prefix": "green-tube-demo",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/cat"],
+      "options": {
+        "jestConfig": "libs/cat/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/cat/src/**/*.ts", "libs/cat/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

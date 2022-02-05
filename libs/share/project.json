@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/share",
+  "sourceRoot": "libs/share/src",
+  "prefix": "green-tube-demo",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/share"],
+      "options": {
+        "jestConfig": "libs/share/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/share/src/**/*.ts",
+          "libs/share/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
