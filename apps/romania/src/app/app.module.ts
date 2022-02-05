@@ -1,16 +1,19 @@
-
+import { AppRomaniaCatService } from './services/app.romania-cat.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CatModule } from '@green-tube-demo/cat';
 import { DogModule } from '@green-tube-demo/dog';
 import { AppComponent } from './app.component';
-import { AppService } from './app.service';
+import { AppRomaniaDogService } from './services/app.romania-dog.service';
 import { NxWelcomeComponent } from './nx-welcome.component';
-
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
-  imports: [BrowserModule, CatModule, DogModule.config({name:"Tests", providers:[AppService]})],
+  imports: [
+    BrowserModule,
+    CatModule.config({name:'Pedro', from:'Romania', providers:[AppRomaniaCatService]}),
+    DogModule.config({ name: 'Philipp', from: "Romania", providers: [AppRomaniaDogService] }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

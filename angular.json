@@ -3,6 +3,7 @@
   "projects": {
     "cat": "libs/cat",
     "dog": "libs/dog",
+    "models": "libs/models",
     "romania": "apps/romania",
     "romania-e2e": "apps/romania-e2e",
     "share": "libs/share",

@@ -1,10 +1,10 @@
 import { Inject, Injectable } from "@angular/core";
-import { Data, DogServiceToken } from "../dog.module";
+import { Data, ConfigDogServiceToken } from "@green-tube-demo/models";
 
 @Injectable()
 export class DogSerrvice{
     
-    constructor(@Inject(DogServiceToken) private  servicve:Data){}
+    constructor(@Inject(ConfigDogServiceToken) private  servicve:Data){}
 
 
     getData():Data{

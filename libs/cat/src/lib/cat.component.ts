@@ -1,4 +1,5 @@
-import { Component, Input } from "@angular/core";
+import { Component, Inject } from "@angular/core";
+import { Data, ConfigCatServiceToken } from "@green-tube-demo/models";
 
 @Component({
     selector:'green-tube-demo-cat',
@@ -8,5 +9,5 @@ import { Component, Input } from "@angular/core";
 })
 export class CatComponent{
 
-    @Input() name?:string ;
+    constructor( @Inject(ConfigCatServiceToken) public  data:Data){  }
 }

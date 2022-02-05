@@ -1,9 +1,7 @@
-//import { AppService } from './../../../../apps/romania/src/app/app.service';
-import { DogSerrvice } from './services/dog.service';
-import { Component, Inject, Input, OnInit } from "@angular/core";
-import { Data } from "..";
 
-import { DogServiceToken } from './dog.module';
+import { Component, Inject } from "@angular/core";
+import { ConfigDogServiceToken, Data } from '@green-tube-demo/models';
+
 
 @Component({
     selector:'green-tube-demo-dog',
@@ -11,18 +9,13 @@ import { DogServiceToken } from './dog.module';
     styleUrls:['./dog.component.scss']
 
 })
-export class DogComponent /*implements OnIniti*/ {
-    @Input() name?:string ;
-   
-  /*constructor(private AppService: AppService){
+export class DogComponent  {
     
-    }*/
+   
 
-   // constructor(@Inject(DogServiceToken) private  servicve:Data){}
+
+    constructor( @Inject(ConfigDogServiceToken) public  data:Data){}
   
- /*   ngOnInit(): void {
-       console.log("====>x", this.servicve);
-        
-    }*/
+ 
     
 }
