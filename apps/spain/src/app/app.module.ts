@@ -1,3 +1,4 @@
+import { environment } from './../environments/environment';
 import { AppSpainCatService } from './services/app.spain-cat.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,8 +13,8 @@ import { AppSpainDogService } from './services/app.spain-dog.service';
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
-    DogModule.config({ name: 'David', from: 'Spain', providers: [AppSpainDogService] }),
-    CatModule.config({ name: 'Lena', from: 'Spain', providers: [AppSpainCatService] }),
+    DogModule.config({ name: 'David', from: 'Spain', providers: [AppSpainDogService] , env:environment}),
+    CatModule.config({ name: 'Lena', from: 'Spain', providers: [AppSpainCatService], env:environment }),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,13 +1,13 @@
-import { Data, ConfigCatServiceToken } from '@green-tube-demo/models';
-import { CatComponent } from './cat.component';
-import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ModuleWithProviders, NgModule } from '@angular/core';
+import { ConfigCatServiceToken, Data } from '@green-tube-demo/models';
 import { ShareModule } from '@green-tube-demo/share';
+import { CatViewModule } from './cat-view.module';
 
 @NgModule({
-  declarations: [CatComponent],
-  imports: [CommonModule, ShareModule],
-  exports: [CatComponent],
+  declarations: [],
+  imports: [CommonModule, ShareModule, CatViewModule],
+  exports: [CatViewModule],
 })
 export class CatModule {
   static config(data: Data): ModuleWithProviders<CatModule> {

@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { ConfigDogServiceToken, Data } from '@green-tube-demo/models';
-import { DogComponent } from './dog.component';
+import { ShareModule } from '@green-tube-demo/share';
+import { DogViewModule } from './dog-view.module';
 import { DogSerrvice } from './services/dog.service';
 
 @NgModule({
-  declarations: [DogComponent],
-  imports: [CommonModule /*ShareModule*/],
-  exports: [DogComponent],
-  providers:[DogSerrvice]
+  imports: [CommonModule, ShareModule, DogViewModule],
+  exports: [DogViewModule],
+  providers: [DogSerrvice],
 })
 export class DogModule {
   static config(data: Data): ModuleWithProviders<DogModule> {
