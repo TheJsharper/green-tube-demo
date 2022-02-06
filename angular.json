@@ -8,6 +8,7 @@
     "romania-e2e": "apps/romania-e2e",
     "share": "libs/share",
     "spain": "apps/spain",
-    "spain-e2e": "apps/spain-e2e"
+    "spain-e2e": "apps/spain-e2e",
+    "ui": "libs/ui"
   }
 }

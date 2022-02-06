@@ -16,6 +16,7 @@
         "inlineStyleLanguage": "scss",
         "assets": ["apps/spain/src/favicon.ico", "apps/spain/src/assets"],
         "styles": ["apps/spain/src/styles.scss"],
+        "stylePreprocessorOptions": {"includePaths": ["libs/ui"]},
         "scripts": []
       },
       "configurations": {

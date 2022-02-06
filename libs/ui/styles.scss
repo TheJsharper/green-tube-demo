@@ -1,0 +1,23 @@
+@import "./variables";
+.card{
+     border-radius: 1rem;
+     padding: 1em;
+     color:$white;
+ }
+.romanian-dog{
+    background-color: $light-blue;
+    @extend .card;
+}
+.romanian-cat{
+    background-color: $purple-primary;
+    @extend .card;
+}
+
+.spanish-dog{
+    background-color: $teal-primary;
+    @extend .card;
+}
+.spanish-cat{
+    background-color: $grey-darken;
+    @extend .card;
+}

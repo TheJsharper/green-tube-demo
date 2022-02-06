@@ -16,6 +16,7 @@
         "inlineStyleLanguage": "scss",
         "assets": ["apps/romania/src/favicon.ico", "apps/romania/src/assets"],
         "styles": ["apps/romania/src/styles.scss"],
+        "stylePreprocessorOptions": {"includePaths": ["libs/ui"]},
         "scripts": []
       },
       "configurations": {

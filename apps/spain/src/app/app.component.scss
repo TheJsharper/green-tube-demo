@@ -1,0 +1,17 @@
+@import "libs/ui/styles";
+:host{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "cat ."
+    ". dog";
+    ::ng-deep green-tube-demo-cat{
+        grid-area: cat;
+        @extend .spanish-cat;
+    }
+    ::ng-deep green-tube-demo-dog{
+        grid-area: dog;
+        @extend .spanish-dog;
+    }
+}
