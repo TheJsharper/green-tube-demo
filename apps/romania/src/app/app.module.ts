@@ -31,8 +31,8 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 })
 export class AppModule {
 
-  constructor(private appRomaniaCatService: AppCatService,  private appRomaniaDogService: AppDogService){
-    this.appRomaniaCatService.config = "ROMANIAN CAT serves from CatService share lib";
-    this.appRomaniaDogService.config = "ROMANIAN DOG serves from DogService share lib";
+  constructor(private appCatService: AppCatService,  private appDogService: AppDogService){
+    this.appCatService.config = "ROMANIAN CAT serves from CatService share lib";
+    this.appDogService.config = "ROMANIAN DOG serves from DogService share lib";
   }
 }
