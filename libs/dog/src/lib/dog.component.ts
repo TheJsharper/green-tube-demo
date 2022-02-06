@@ -1,6 +1,7 @@
 
 import { Component, Inject } from "@angular/core";
 import { ConfigDogServiceToken, Data } from '@green-tube-demo/models';
+import {AppDogService} from '@green-tube-demo/share';
 
 
 @Component({
@@ -14,7 +15,9 @@ export class DogComponent  {
    
 
 
-    constructor( @Inject(ConfigDogServiceToken) public  data:Data){}
+    constructor( @Inject(ConfigDogServiceToken) public  data:Data, private AppRomaniaDogService:AppDogService ){
+        console.log("===>x", this.AppRomaniaDogService.config)
+    }
   
  
     

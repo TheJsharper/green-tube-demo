@@ -1,22 +1,38 @@
-import { environment } from './../environments/environment';
-
-import { AppRomaniaCatService } from './services/app.romania-cat.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CatModule } from '@green-tube-demo/cat';
 import { DogModule } from '@green-tube-demo/dog';
+import { AppCatService, ShareModule, AppDogService } from '@green-tube-demo/share';
+import { environment } from './../environments/environment';
 import { AppComponent } from './app.component';
-import { AppRomaniaDogService } from './services/app.romania-dog.service';
 import { NxWelcomeComponent } from './nx-welcome.component';
+
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
-    CatModule.config({name:'Pedro', from:'Romania', providers:[AppRomaniaCatService], env:environment}),
-    DogModule.config({ name: 'Philipp', from: "Romania", providers: [AppRomaniaDogService], env:environment }),
+    ShareModule,
+    CatModule.config({
+      name: 'Pedro',
+      from: 'Romania',
+      providers: [AppCatService],
+      env: environment,
+    }),
+    DogModule.config({
+      name: 'Philipp',
+      from: 'Romania',
+      providers: [AppDogService],
+      env: environment,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+
+  constructor(private appRomaniaCatService: AppCatService,  private appRomaniaDogService: AppDogService){
+    this.appRomaniaCatService.config = "ROMANIAN CAT serves from CatService share lib";
+    this.appRomaniaDogService.config = "ROMANIAN DOG serves from DogService share lib";
+  }
+}

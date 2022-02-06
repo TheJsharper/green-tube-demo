@@ -13,7 +13,7 @@ export class CatModule {
   static config(data: Data): ModuleWithProviders<CatModule> {
     return {
       ngModule: CatModule,
-      providers: [{ provide: ConfigCatServiceToken, useValue: data }],
+      providers: [{ provide: ConfigCatServiceToken, useValue: data,  }, ... data.providers],
     };
   }
 }
